@@ -1,18 +1,18 @@
 # running a function with arguments in another thread
-from time import sleep, ctime
+from time import sleep,ctime
 from threading import Thread
 
-# a custom function that blocks for a moment
-def task(sleep_time, message):
-    # block for a moment
+#a custom function blocks from a moment
+def task(sleep_time,massage):
+    #block from a moment
     sleep(sleep_time)
-    # display a message
-    print(f'{ctime()} {message}')
+    #display a massage
+    print(f'{ctime(1)} {massage}')
 
-# create a thread
-thread = Thread(target=task, args=(1.5, 'New message from another thread'))
-# run the thread
+#create a thread
+thread = Thread(target=task,args=(1.5,'new massage from another thread'))
+#run this thread
 thread.start()
-# wait for the thread to finish
-print(f'{ctime()} Waiting for the thread...')
+#wait for a thread to finish
+print(f'{ctime()} Waiting for thread...')
 thread.join()
