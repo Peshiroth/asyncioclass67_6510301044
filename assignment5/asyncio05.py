@@ -5,11 +5,8 @@ from time import time,sleep
 async def task_coro(arg):
     #Menu
     Menu = ["Rice","Curry","Noodle"]
-    #generate a random value between 0 and 1
     value = random() + 1
-    #block for a moment 
     await asyncio.sleep(value)
-    #report the value
     print(f'>task {Menu[arg]} done with {value:.3f} sec')
 async def main():
     #create many task
