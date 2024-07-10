@@ -10,7 +10,7 @@ async def task_coro(arg):
     #block for a moment 
     await asyncio.sleep(value)
     #report the value
-    print(f'>task {Menu[arg]} done with {value:3f} sec')
+    print(f'>task {Menu[arg]} done with {value:.3f} sec')
 async def main():
     #create many task
     tasks = [asyncio.create_task(task_coro(i)) for i in range(3) ]
