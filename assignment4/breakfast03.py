@@ -6,11 +6,10 @@ async def make_coffee():
     print("coffee: prepare ingridients")
     sleep(1)
     print("coffee: waiting...")
-    await asyncio.sleep(2)
-    fry_eggs()
+    await asyncio.sleep(5)
     print("coffee: ready")
 
-def fry_eggs():
+async def fry_eggs():
     print("eggs: prepare ingridients")
     sleep(1)
     print("eggs: frying...")
@@ -19,7 +18,10 @@ def fry_eggs():
 
 async def main():
     start = time()
-    await make_coffee()
+    coffee_task = asyncio.create_task(make_coffee())
+    egg_task = asyncio.create_task(fry_eggs())
+    await coffee_task
+    await egg_task
     print(f"breakfast is ready in {time()-start} min")
 
 
