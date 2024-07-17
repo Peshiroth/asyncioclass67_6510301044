@@ -23,8 +23,9 @@ async def ApplyButter():
     print(f"{time.ctime()} - Finish apply butter")
 async def FryEggs(eggs):
     print(f"{time.ctime()} - Begin fry eggs")
-    await asyncio.sleep(1)
     print(f"{time.ctime()} - Heat pan to fry eggs")
+    await asyncio.sleep(1)
+
     for egg in range(eggs):
         print(f"{time.ctime()} - Frying",egg+1,"eggs")
         await asyncio.sleep(1)
@@ -65,7 +66,7 @@ async def main():
     Menus = [makefry_eggs, makefry_bacon, maketoast_bread]
     done,pending = await asyncio.wait(Menus)
 
-    print(f"\n{time.ctime()} >>>>>>>> Nealy to finished...")
+    print(f"\n{time.ctime()} >>>>>>>> Nearly to finished...")
     PourJuice()
 
 if __name__ == "__main__":
